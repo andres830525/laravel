@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\EmpleadoController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.delete');
 
-    Route::resource('posts', App\Http\Controllers\PostController::class);
+    // Route::resource('posts', App\Http\Controllers\PostController::class);
     Route::resource('empleados', App\Http\Controllers\EmpleadoController::class);
 
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
