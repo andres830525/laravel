@@ -97,6 +97,17 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, empleado $empleado)
     {
+        $validatedData = $request->validate([
+            'nombre' => 'required|max:255',
+            'email' => 'required|max:255',
+            'descripcion' => 'required',
+          ], [
+           
+            'nombre.required' => 'El nombre es obligatorio.',
+            'email.required' => 'Es necesaria una dirección de correo electronico.',
+            'descripcion.required' => 'Es necesaria una descripcion.',
+         ]);
+         
         
         $empleado->update($request->all());
         
