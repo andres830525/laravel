@@ -67,8 +67,8 @@ class EmpleadoController extends Controller
      */
     public function edit(empleado $empleado)
     {
-       
-        return view('empleados.edit', compact('empleado'));
+        $areas = area::all();
+        return view('empleados.edit', compact('empleado','areas'));
         
     }
 
@@ -83,7 +83,7 @@ class EmpleadoController extends Controller
     {
         
         $empleado->update($request->all());
-        session()->flash('flash_message', 'Empleado editado correctamente!');
+        
         return redirect()->route('empleados.index');
     }
 

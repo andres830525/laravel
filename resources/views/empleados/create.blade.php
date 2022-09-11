@@ -17,7 +17,7 @@
             <!--Body-->
             <div class="card-body">
               <div class="row">
-                <label for="title" class="col-sm-2 col-form-label">Nombre Completo <span>(required, at least 3 characters)</label>
+                <label for="title" class="col-sm-2 col-form-label">Nombre Completo </label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre completo"
                     autocomplete="off" autofocus>
