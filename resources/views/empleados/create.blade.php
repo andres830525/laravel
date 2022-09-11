@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <form method="POST" action="{{ route('empleados.store') }}" class="form-horizontal" name="frmAdd">
+        <form method="POST" action="{{ route('empleados.store') }}" class="form-horizontal" name="frmAdd" id="frmAdd">
           @csrf
           <div class="card">
             <!--Header-->
@@ -21,6 +21,9 @@
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre completo"
                     autocomplete="off" autofocus>
+                    @error('nombre')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
               </div>
               <div class="row">
@@ -28,6 +31,9 @@
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="email" placeholder="Ingrese el email"
                     autocomplete="on" autofocus>
+                    @error('email')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-check form-check-radio">
                   <label class="form-check-label">
@@ -55,7 +61,8 @@
                   @endforeach
                 </select>
                 <label for="exampleFormControlTextarea1">Descripcion(*)</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="1"></textarea>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="1"></textarea>
+                
                 
                 
               </div>
@@ -111,45 +118,23 @@
     </div>
   </div>
 </div>
-@endsection
-
-  <script>
-<!-- jQuery Form Validation code -->
-$(function() {
-    $("frmAdd").validate({   
-        rules: {
-          nombre: {
-                required: true,
-                lettersonly: true
-            },
-            descripcion:{
-               required:true
-},
-email: {
-                required: true,
-                email: true
-            },
-sexo:{
-required: true,
-
-}
-},
-        // Specify the validation error messages
-        messages:
-{
-  descripcion: {
-                required: "la descripcion es requerida"
-            },
-nombre:{
-               required:'el nombre es requerido'
-},
-email: {
-                required: 'el email es requerido'
-            },
-sexo:{
-required: 'this field required'
-}
-}
-    });
+<script>
+  $(document).ready(function() {
+      $("#frmAdd").validate({
+          rules: {
+              nombre: "required",
+              
+              email: "required",
+              
+          },
+                messages: {
+                    
+                    nombre: "nombre is required",
+                    email: "Email is required",
+                    
+                }
+      });
   });
 </script>
+@endsection
+

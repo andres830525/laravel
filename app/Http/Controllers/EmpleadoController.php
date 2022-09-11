@@ -40,7 +40,21 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        empleado::create($request->all());
+
+        $validatedData = $request->validate([
+            'nombre' => 'required|max:255',
+            'email' => 'required|max:255',
+            'descripcion' => 'required',
+          ], [
+           
+            'nombre.required' => 'El nombre es obligatorio.',
+            'email.required' => 'Es necesaria una dirección de correo electronico.',
+            'descripcion.required' => 'Es necesaria una descripcion.',
+         ]);
+         
+          
+
+        empleado::create($request->all()); 
        
         
         session()->flash('flash_message', 'Empleado creado correctamente!');
