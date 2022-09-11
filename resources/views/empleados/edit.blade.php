@@ -21,6 +21,9 @@
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre completo"
                   value="{{ old('nombre', $empleado->nombre) }}" autocomplete="off" autofocus>
+                  @error('nombre')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
               </div>
               <div class="row">
@@ -28,6 +31,9 @@
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="email" placeholder="Ingrese el email"
                   value="{{ old('email', $empleado->email) }}"  autocomplete="on" autofocus>
+                  @error('email')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-check form-check-radio">
                   <label class="form-check-label">
