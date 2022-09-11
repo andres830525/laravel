@@ -1,8 +1,8 @@
-# Booking System with Laravel 8 and Material Dashboard
+# Sistema de registro de Empleados con Laravel 8 y Material Dashboard
 
 ## How to use
 
-Code for [Bookig System - Laravel 8](https://www.youtube.com/playlist?list=PLYO5TOinzgThHkDH3GYxAeidegZkuLE3_)
+Code for [Sistema de registro de Empleados - Laravel 8]
 
 - Clone the repository with __git clone__
 - Copy __.env.example__ file to __.env__
