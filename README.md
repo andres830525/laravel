@@ -9,7 +9,7 @@ Code for [Sistema de registro de Empleados - Laravel 8 y MYSQL]
 - Edit database credentials in __.env__
 - Run __composer install__
 - Run __php artisan key:generate__
-- Run __php artisan migrate --seed__
+- Run __php artisan migrate --seed__(php artisan migrate:fresh --seed)
 - Run __npm install__
 - Run __npm run dev__
 - Run __php artisan serve__ (if you want to use other port add __--port=90__)
@@ -29,4 +29,6 @@ pass:  password
 
 
 Feel free to use and re-use any way you want.
+
+
 
