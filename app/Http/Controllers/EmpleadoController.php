@@ -68,6 +68,8 @@ class EmpleadoController extends Controller
     public function edit(empleado $empleado)
     {
         $areas = area::all();
+        session()->flash('flash_message', 'Empleado actualizado correctamente!');
+
         return view('empleados.edit', compact('empleado','areas'));
         
     }

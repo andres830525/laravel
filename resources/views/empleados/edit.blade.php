@@ -20,14 +20,14 @@
                 <label for="title" class="col-sm-2 col-form-label">Nombre Completo </label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre completo"
-                    autocomplete="off" autofocus>
+                  value="{{ old('nombre', $empleado->nombre) }}" autocomplete="off" autofocus>
                 </div>
               </div>
               <div class="row">
                 <label for="title" class="col-sm-2 col-form-label">Correo Electronico</label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="email" placeholder="Ingrese el email"
-                    autocomplete="on" autofocus>
+                  value="{{ old('email', $empleado->email) }}"  autocomplete="on" autofocus>
                 </div>
                 <div class="form-check form-check-radio">
                   <label class="form-check-label">
@@ -55,13 +55,15 @@
                   @endforeach
                 </select>
                 <label for="exampleFormControlTextarea1">Descripcion(*)</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="1"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="1"  >
+                  {{ old('descripcion', $empleado->descripcion) }}
+                </textarea>
                 
                 
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="boletin" value="1">
+                    <input class="form-check-input" type="checkbox" name="boletin" value="1" >
                     Desea resibir boletin informativo 
                     <span class="form-check-sign">
                       <span class="check"></span>
