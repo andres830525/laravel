@@ -15,7 +15,18 @@ Code for [Bookig System - Laravel 8](https://www.youtube.com/playlist?list=PLYO5
 - Run __php artisan serve__ (if you want to use other port add __--port=90__)
 - You can __register__ by clicking on top-right
 
+## Login
+
+/login
+
+username: admin
+
+
+pass:  password
+
+
 ## License
+
 
 Feel free to use and re-use any way you want.
 
