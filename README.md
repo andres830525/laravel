@@ -1,8 +1,8 @@
-# Sistema de registro de Empleados con Laravel 8 y Material Dashboard
+# Sistema de registro de Empleados con Laravel 8 y Material Dashboard MYSQL
 
 ## How to use
 
-Code for [Sistema de registro de Empleados - Laravel 8]
+Code for [Sistema de registro de Empleados - Laravel 8 y MYSQL]
 
 - Clone the repository with __git clone__
 - Copy __.env.example__ file to __.env__
